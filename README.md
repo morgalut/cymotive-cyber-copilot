@@ -1,9 +1,3 @@
-Below is a **ready-to-drop `README.md`** that documents **all CURL tests**, explains **what each test validates**, and shows **how to run the evaluation (eval/VAL) script**.
-It is written to match *exactly* what your system currently does and what the assignment expects to see.
-
-You can copy-paste this into `README.md` at the repo root.
-
----
 
 # Cymotive Cyber Copilot – PoC README
 
