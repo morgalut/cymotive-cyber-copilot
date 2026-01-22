@@ -1,0 +1,56 @@
+[
+  {
+    "id": "GOLD-001",
+    "title": "Ransomware-like behavior on file server",
+    "report_text": "At 02:13 UTC the file server FS-12 showed rapid file modifications and extension changes. A ransom note appeared in multiple folders. The service account 'backup_svc' had an interactive login at 01:58 from an admin workstation. Users report they cannot open shared files.",
+    "expected": {
+      "suspected_category_any_of": ["ransomware", "malware"],
+      "summary_must_contain_any_of": ["file", "server", "ransom"],
+      "mitigation_immediate_must_contain_any_of": ["isolate", "contain", "disable"],
+      "open_questions_min": 2
+    }
+  },
+  {
+    "id": "GOLD-002",
+    "title": "Phishing leading to abnormal sign-in",
+    "report_text": "Several employees received an email that looked like our SSO login. One user entered credentials. We then saw repeated MFA prompts and a successful login from a new location. No ticket approved this access.",
+    "expected": {
+      "suspected_category_any_of": ["phishing", "identity", "account"],
+      "summary_must_contain_any_of": ["phishing", "SSO", "MFA"],
+      "mitigation_immediate_must_contain_any_of": ["reset", "revoke", "disable"],
+      "open_questions_min": 2
+    }
+  },
+  {
+    "id": "GOLD-003",
+    "title": "Possible DNS tunneling / rare domains",
+    "report_text": "DNS logs show multiple hosts querying rare domains with random-looking subdomains every few minutes. Network team suspects C2 over DNS or DNS tunneling. No malware sample yet.",
+    "expected": {
+      "suspected_category_any_of": ["c2", "dns", "tunneling"],
+      "summary_must_contain_any_of": ["DNS", "domains"],
+      "mitigation_immediate_must_contain_any_of": ["block", "inspect", "capture"],
+      "open_questions_min": 2
+    }
+  },
+  {
+    "id": "GOLD-004",
+    "title": "Possible DDoS on public API",
+    "report_text": "Our public API latency spiked. WAF shows a traffic surge from many IPs hitting /login and /search. Error rate increased. No code deploys in the last 24h.",
+    "expected": {
+      "suspected_category_any_of": ["ddos", "availability"],
+      "summary_must_contain_any_of": ["API", "traffic", "latency"],
+      "mitigation_immediate_must_contain_any_of": ["rate", "WAF", "filter"],
+      "open_questions_min": 1
+    }
+  },
+  {
+    "id": "GOLD-005",
+    "title": "Messy incomplete report (edge case)",
+    "report_text": "things are weird. laptop slow. someone said powershell?? no ioc. maybe antivirus alert but idk. help asap",
+    "expected": {
+      "suspected_category_any_of": ["malware", "unknown", "workstation"],
+      "summary_must_contain_any_of": ["limited", "insufficient", "preliminary", "unknown"],
+      "open_questions_min": 3
+    }
+  }
+]

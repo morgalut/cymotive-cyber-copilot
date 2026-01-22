@@ -1,0 +1,44 @@
+[
+  {
+    "id": "INC-001",
+    "title": "Suspicious PowerShell on workstation",
+    "description": "User reported slowness. EDR flagged encoded PowerShell executing from temp directory. Possible downloader behavior. No confirmed outbound IOC provided.",
+    "tags": ["powershell", "edr", "malware", "workstation"],
+    "mitigation_notes": ["Isolate host", "Collect memory dump", "Review PowerShell logs", "Hunt for persistence"]
+  },
+  {
+    "id": "INC-002",
+    "title": "Phishing email leading to credential reuse",
+    "description": "Multiple users received phishing email mimicking SSO login. One account showed abnormal sign-in and MFA fatigue prompts. Possible credential theft.",
+    "tags": ["phishing", "identity", "mfa", "sso"],
+    "mitigation_notes": ["Reset passwords", "Revoke sessions", "Enforce MFA", "Block sender domains", "User awareness"]
+  },
+  {
+    "id": "INC-003",
+    "title": "Ransomware activity detected on file server",
+    "description": "File server shows rapid file modifications and extension changes. Ransom note observed. Lateral movement suspected from a compromised admin account.",
+    "tags": ["ransomware", "fileserver", "lateral-movement", "active-directory"],
+    "mitigation_notes": ["Isolate server", "Disable compromised accounts", "Stop spread", "Restore from backups", "IR containment"]
+  },
+  {
+    "id": "INC-004",
+    "title": "Possible DDoS on public API",
+    "description": "Public API latency increased; traffic spikes from many IPs. WAF logs show repeated requests to /login and /search endpoints.",
+    "tags": ["ddos", "waf", "api", "availability"],
+    "mitigation_notes": ["Rate limit", "Enable WAF rules", "Engage CDN protections", "Traffic filtering"]
+  },
+  {
+    "id": "INC-005",
+    "title": "Suspicious outbound DNS to rare domains",
+    "description": "DNS logs show hosts querying rare domains with randomized subdomains. Could indicate DNS tunneling or C2 over DNS.",
+    "tags": ["dns", "c2", "tunneling", "network"],
+    "mitigation_notes": ["Block domains", "Inspect endpoints", "Packet capture", "Threat hunt for malware"]
+  },
+  {
+    "id": "INC-006",
+    "title": "Unauthorized admin access attempt",
+    "description": "Several failed admin logins followed by a successful login from an unusual geo. No change tickets exist. Potential account compromise.",
+    "tags": ["account-compromise", "admin", "auth", "geolocation"],
+    "mitigation_notes": ["Disable account", "Review audit logs", "Rotate keys", "Check for persistence"]
+  }
+]

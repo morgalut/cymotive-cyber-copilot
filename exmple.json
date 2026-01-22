@@ -1,0 +1,96 @@
+{
+    "summary": "The incident involves unusual alerts possibly related to VPN activity and user reports of popups, indicating a potential account compromise.",
+    "key_indicators": [
+        "unusual alerts",
+        "user reports of popups"
+    ],
+    "suspected_category": "account_compromise",
+    "mitigation_plan": {
+        "immediate": [
+            "Investigate unusual alerts and user reports"
+        ],
+        "short_term": [
+            "Monitor VPN activity",
+            "Check for unauthorized access attempts"
+        ],
+        "long_term": [
+            "Implement stricter VPN authentication measures",
+            "Conduct user awareness training regarding popups"
+        ],
+        "notes": [
+            "Low similarity with retrieved incidents, but may involve themes from INC-006 regarding account compromise."
+        ]
+    },
+    "similar_incidents": [
+        {
+            "id": "INC-006",
+            "title": "Unauthorized admin access attempt",
+            "snippet": "Several failed admin logins followed by a successful login from an unusual geo. No change tickets exist. Potential account compromise.",
+            "score": 0.65,
+            "match_factors": [
+                "account-compromise",
+                "admin",
+                "auth",
+                "geolocation"
+            ]
+        },
+        {
+            "id": "INC-005",
+            "title": "Suspicious outbound DNS to rare domains",
+            "snippet": "DNS logs show hosts querying rare domains with randomized subdomains. Could indicate DNS tunneling or C2 over DNS.",
+            "score": 0.6374761222728726,
+            "match_factors": [
+                "dns",
+                "c2",
+                "tunneling",
+                "network"
+            ]
+        }
+    ],
+    "assumptions": [
+        "The user reports of popups are valid and related to the incident.",
+        "The alerts are not false positives and require investigation."
+    ],
+    "open_questions": [
+        "What specific alerts are being triggered?",
+        "What type of popups is the user experiencing?",
+        "Is there any unusual VPN activity recorded?"
+    ],
+    "metadata": {
+        "llm_latency_ms": 7676,
+        "llm_provider": "openai",
+        "model": "gpt-4o-mini",
+        "usage_raw": {
+            "input_tokens": 706,
+            "input_tokens_details": {
+                "cached_tokens": 0
+            },
+            "output_tokens": 317,
+            "output_tokens_details": {
+                "reasoning_tokens": 0
+            },
+            "total_tokens": 1023
+        },
+        "usage": {
+            "input_tokens": 706,
+            "output_tokens": 317,
+            "total_tokens": 1023,
+            "cached_input_tokens": 0,
+            "billable_input_tokens": 706,
+            "reasoning_tokens": 0,
+            "output_to_input_ratio": 0.4490084985835694,
+            "tokens_per_second": 133.27
+        },
+        "cost_estimate_usd": 0.000829,
+        "structured_outputs": true,
+        "latency_ms": 8839,
+        "retrieval": {
+            "retrieval_latency_ms": 1162,
+            "use_hybrid": true,
+            "top_k": 2,
+            "backend": "faiss"
+        },
+        "request_id": "81fddb69-fba7-4c23-a03d-03820b0aebb2",
+        "request_latency_ms": 8839
+    }
+}

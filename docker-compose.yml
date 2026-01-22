@@ -1,0 +1,26 @@
+services:
+  copilot:
+    build: .
+    container_name: cymotive-cyber-copilot
+    ports:
+      - "8000:8000"
+
+    # Load all variables from .env (recommended)
+    env_file:
+      - .env
+
+    environment:
+      # Optional: override a few things here (or remove to rely purely on .env)
+      # LLM_PROVIDER: "openai"
+
+      # FAISS + Embeddings retrieval (can also be placed in .env)
+      RETRIEVAL_BACKEND: "${RETRIEVAL_BACKEND:-tfidf}"   # tfidf | faiss
+      OPENAI_EMBEDDING_MODEL: "${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}"
+      FAISS_INDEX_PATH: "${FAISS_INDEX_PATH:-/app/storage/faiss.index}"
+      FAISS_META_PATH: "${FAISS_META_PATH:-/app/storage/faiss_meta.json}"
+
+    volumes:
+      - ./app:/app/app
+      - ./storage:/app/storage
+
+    restart: unless-stopped

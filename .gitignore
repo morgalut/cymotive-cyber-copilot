@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo           
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.idea/
+.vscode/
+.DS_Store
+storage/faiss.index
+storage/faiss_meta.json 
+logs/
+.env
